@@ -32,8 +32,10 @@ app.get(
         (!level || course.level === level) &&
         (min === null || course.credits >= min) &&
         (max === null || course.credits <= max) &&
-        (!semester || course.semester === semester) &&
-        (!instructor || course.instructor.toLowerCase().includes(instructor.toLowerCase()))
+        (!semester ||
+          course.semester.toLowerCase() === semester.toLowerCase()) &&
+        (!instructor ||
+          course.instructor.toLowerCase().includes(instructor.toLowerCase()))
       );
     });
 
