@@ -33,7 +33,7 @@ app.get(
         (min === null || course.credits >= min) &&
         (max === null || course.credits <= max) &&
         (!semester || course.semester === semester) &&
-        (!instructor || course.instructor.includes(instructor))
+        (!instructor || course.instructor.toLowerCase().includes(instructor.toLowerCase()))
       );
     });
 
